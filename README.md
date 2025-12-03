@@ -1,16 +1,21 @@
-# ConnectionScope
+![Scope JDBC](/assets/scope-jdbc-banner.png)
 
-**High-performance, explicit JDBC connection & transaction management.**
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE.txt)
+[![Issues](https://img.shields.io/github/issues/LlamaSystems/connection-scope)](https://github.com/LlamaSystems/connection-scope/issues)
+[![Language](https://img.shields.io/github/languages/top/LlamaSystems/connection-scope)](https://github.com/LlamaSystems/connection-scope)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Known Vulnerabilities](https://snyk.io/test/github/LlamaSystems/connection-scope/badge.svg)](https://snyk.io/test/github/LlamaSystems/connection-scope)
 
-**The fastest and safest way to execute multiple queries on a single DB connection** — delivering maximum performance
-from short-lived request flows to long-running transactions, with full low-level JDBC power, explicit commit/rollback
-control, and zero lifecycle-leak risk.
+ScopeJDBC - High-performance, explicit JDBC connection & transaction management. The fastest and safest way to execute
+multiple queries on a single DB connection — delivering maximum performance from short-lived request flows to
+long-running transactions, with full low-level JDBC power, explicit commit/rollback control, and zero lifecycle-leak
+risk.
 
-✨ **Zero reflection. Zero proxies. Zero annotations. Zero dependency\*.**
+**Zero reflection. Zero proxies. Zero annotations. Zero dependency.**
 
 ---
 
-## Why ConnectionScope?
+## Why ScopeJDBC?
 
 JDBC is powerful but easy to misuse:
 
@@ -20,7 +25,7 @@ JDBC is powerful but easy to misuse:
 - Transaction rules tied to frameworks (Spring)
 - Magic behaviors with proxies & reflection
 
-**ConnectionScope eliminates all of these problems** with a **single, thread-confined connection** that you fully
+**ScopeJDBC eliminates all of these problems** with a **single, thread-confined connection** that you fully
 control:
 
 - Exactly one connection per unit of work
@@ -60,10 +65,7 @@ public void deleteUser(Long id) {
 Each call does:
 
 ```sql
-GET
-→
-EXECUTE
-→ RETURN (pool)
+GET → EXECUTE → RETURN (pool)
 ```
 
 This causes:
@@ -72,7 +74,7 @@ This causes:
 - Hidden auto-commits
 - Impossible to enforce one logical session
 
-## ConnectionScope solution
+## ScopeJDBC solution
 
 ### Solution: One connection, shared session
 
@@ -130,9 +132,9 @@ void main() {
 
 Prevents accidental writes (DB-enforced when supported).
 
-### Spring Transactional vs ConnectionScope
+### Spring Transactional vs ScopeJDBC
 
-| Feature                          | Spring `@Transactional`                                        | ConnectionScope                                                     |
+| Feature                          | Spring `@Transactional`                                        | ScopeJDBC                                                           |
 |----------------------------------|----------------------------------------------------------------|---------------------------------------------------------------------|
 | Framework requirement            | Requires Spring context, proxies, AOP                          | Works anywhere with any JDBC `DataSource`                           |
 | Dependencies                     | Spring Transaction Manager, AOP infra                          | **Zero** (optional compile-time annotation)                         |
@@ -158,9 +160,9 @@ Everything above can be achieved with Spring — but only through:
 - Hidden lifecycle rules
 - Annotation-driven behavior
 
-### Positioning: Where ConnectionScope wins
+### Positioning: Where ScopeJDBC wins
 
-ConnectionScope is not a replacement for declarative Spring-style cross-cutting transactions.
+ScopeJDBC is not a replacement for declarative Spring-style cross-cutting transactions.
 It is the superior tool when you need:
 
 - High-performance JDBC
@@ -171,16 +173,52 @@ It is the superior tool when you need:
 
 Great for: CQRS handlers, microservices, CLI, repositories, DDD aggregates, schedulers, integration flows.
 
-## Installation
+
+---
+
+## License
+
+This project is licensed under the **Apache License 2.0**. See the [LICENSE.txt](LICENSE.txt) file for details.
+
+---
+
+## Code of Conduct
+
+We are committed to fostering an open and welcoming environment. Please read our [Code of Conduct](CODE_OF_CONDUCT.md)
+to understand the standards of behavior expected in this community.
+
+---
+
+## Contributing
+
+We welcome contributions from everyone! Whether you're fixing bugs, improving documentation, or adding new features,
+your help is appreciated. Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+
+---
+
+## Security
+
+If you discover a security vulnerability, please follow our [Security Policy](SECURITY.md) to report it responsibly.
+
+---
+
+## Getting Started
+
+### Maven
 
 ```xml
 
 <dependency>
     <groupId>io.github.llamasystems</groupId>
-    <artifactId>connection-scope</artifactId>
+    <artifactId>scope-jdbc</artifactId>
     <version>1.0.0</version>
 </dependency>
-
 ```
 
-## ⭐ If you like this project, please star the repo!
+### Gradle
+
+```gradle
+dependencies {
+    implementation 'io.github.llamasystems:scope-jdbc:1.0.0'
+}
+```
