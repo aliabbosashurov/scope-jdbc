@@ -1,6 +1,6 @@
-package io.github.llamasystems.connectionscope;
+package io.github.llamasystems.scopejdbc;
 
-import io.github.llamasystems.connectionscope.exception.ConnectionScopeException;
+import io.github.llamasystems.scopejdbc.exception.ConnectionScopeException;
 
 import java.sql.Connection;
 

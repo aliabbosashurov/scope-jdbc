@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.llamasystems</groupId>
-    <artifactId>connection-scope</artifactId>
+    <artifactId>scope-jdbc</artifactId>
     <version>0.3.0</version>
     <packaging>jar</packaging>
-    <name>Connection Scope</name>
+    <name>ScopeJDBC</name>
     <description>Java library for executing multiple JDBC operations atomically within a single connection scope with
         automatic commit/rollback support.
     </description>
-    <url>https://github.com/LlamaSystems/connection-scope</url>
+    <url>https://github.com/LlamaSystems/scope-jdbc</url>
 
     <licenses>
         <license>
@@ -31,9 +31,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/LlamaSystems/connection-scope.git</connection>
-        <developerConnection>scm:git:ssh://github.com/LlamaSystems/connection-scope.git</developerConnection>
-        <url>https://github.com/LlamaSystems/connection-scope</url>
+        <connection>scm:git:git://github.com/LlamaSystems/scope-jdbc.git</connection>
+        <developerConnection>scm:git:ssh://github.com/LlamaSystems/scope-jdbc.git</developerConnection>
+        <url>https://github.com/LlamaSystems/scope-jdbc</url>
     </scm>
 
     <properties>
