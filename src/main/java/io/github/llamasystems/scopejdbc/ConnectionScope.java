@@ -1,8 +1,8 @@
-package io.github.llamasystems.connectionscope;
+package io.github.llamasystems.scopejdbc;
 
 import com.google.errorprone.annotations.MustBeClosed;
-import io.github.llamasystems.connectionscope.annotations.ConnectionScopeManaged;
-import io.github.llamasystems.connectionscope.exception.ConnectionScopeException;
+import io.github.llamasystems.scopejdbc.annotations.ConnectionScopeManaged;
+import io.github.llamasystems.scopejdbc.exception.ConnectionScopeException;
 
 import javax.sql.DataSource;
 import java.sql.Connection;

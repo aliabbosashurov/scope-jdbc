@@ -1,4 +1,4 @@
-package io.github.llamasystems.connectionscope;
+package io.github.llamasystems.scopejdbc;
 
 import java.util.List;
 

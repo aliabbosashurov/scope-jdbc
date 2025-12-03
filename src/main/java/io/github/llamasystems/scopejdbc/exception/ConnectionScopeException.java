@@ -1,6 +1,6 @@
-package io.github.llamasystems.connectionscope.exception;
+package io.github.llamasystems.scopejdbc.exception;
 
-import io.github.llamasystems.connectionscope.ConnectionScope;
+import io.github.llamasystems.scopejdbc.ConnectionScope;
 
 /// # ConnectionScopeException
 /// Unchecked exception thrown when a [ConnectionScope] operation fails.
